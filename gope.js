@@ -4,9 +4,18 @@ window.onload = function() {
     const output = document.getElementById("output");  
     const picker = document.getElementById("picker");
 
-    
+    const secretMessages = {
+        "Jem": "Don't be too harsh on yourself, Jem. You'll get thru this hmm?",
+        "jem": "Thank you for not giving up, smol.",
+        "JEM": "So proud of you, Bading!",
+        "Puring": "Honestly, I'm surprised that you used this Nickname, but I'm glad you did. Know that even if today feels heavy, remember you've survived every hard day before, and you'll get through this too.",
+        "puring": "Honestly, I'm surprised that you used this Nickname, but I'm glad you did. Know that even if today feels heavy, remember you've survived every hard day before, and you'll get through this too.",
+        "PURING": "Honestly, I'm surprised that you used this Nickname, but I'm glad you did. Know that even if today feels heavy, remember you've survived every hard day before, and you'll get through this too.",
+        "mej": "I don't know if I have the right to say this, but I'm glad you exist. And I hope today is kind to you",
+        "Mej": "I don't know if I have the right to say this, but I'm glad you exist. And I hope today is kind to you",
+        "MEJ": "I don't know if I have the right to say this, but I'm glad you exist. And I hope today is kind to you",
+        "Casurog": "Hey Casurog, remember to take breaks and care for yourself. You're doing great!"
     };
-
     const songs = [
         { title: "So Easy – Olivia Dean", embed: "https://open.spotify.com/track/6sGIMrtIzQjdzNndVxe397" },
         { title: "Ribs – Lorde", embed: "https://open.spotify.com/track/2MvvoeRt8NcOXWESkxWn3g?si=WYnhng2VSuOcQYwzziQK9g" },
@@ -168,7 +177,7 @@ window.onload = function() {
         else if (choice === "song") {
             const song = songs[Math.floor(Math.random() * songs.length)];
             output.innerHTML = `<p> ${song.title}</p>
-                                <iframe src="${song.embed}" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                                <iframe src="${song.embed}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                                 <p><a href= "https://open.spotify.com/track/${song.embed.split('/track/')[1].split('?')[0]}" target="_blank">Play on Spotify</a></p>`;
         }
     }
@@ -206,6 +215,7 @@ window.onload = function() {
             ctx.fill();
             ctx.stroke();
 
+            // TEXT
             ctx.save();
             ctx.translate(radius, radius);
             ctx.rotate(currentAngle + i * sliceAngle + sliceAngle / 2);
@@ -272,5 +282,4 @@ function getContrastingColor(bgColor) {
     const brightness = (r * 299 + g * 587 + b * 114) / 1000;
     return brightness > 128 ? "black" : "white";
 }
-
-
+}
