@@ -168,7 +168,7 @@ window.onload = function() {
         else if (choice === "song") {
             const song = songs[Math.floor(Math.random() * songs.length)];
             output.innerHTML = `<p> ${song.title}</p>
-                                <iframe src="${song.embed}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                                <iframe src="${song.embed}" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                                 <p><a href= "https://open.spotify.com/track/${song.embed.split('/track/')[1].split('?')[0]}" target="_blank">Play on Spotify</a></p>`;
         }
     }
@@ -206,7 +206,6 @@ window.onload = function() {
             ctx.fill();
             ctx.stroke();
 
-            // TEXT
             ctx.save();
             ctx.translate(radius, radius);
             ctx.rotate(currentAngle + i * sliceAngle + sliceAngle / 2);
@@ -273,4 +272,5 @@ function getContrastingColor(bgColor) {
     const brightness = (r * 299 + g * 587 + b * 114) / 1000;
     return brightness > 128 ? "black" : "white";
 }
+
 
